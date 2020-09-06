@@ -54,6 +54,12 @@ double Space_Laundry(double sumSpace)
 
     return sum;
 }
+int Pay_back(int sum)
+{
+    int Fah = 0;
+    Fah = (sum) / 5000;
+    return Fah;
+}
 
 int main()
 {
@@ -66,7 +72,7 @@ int main()
     }Laundry;
     struct Business
     {
-        int laundry_price = 0, dryingg_price = 0, avg_Cost = 0;
+        int laundry_price = 0, dryingg_price = 0, avg_Cost = 0 ,avg_bath=0;
     }profit;
 
 
@@ -89,19 +95,20 @@ int main()
             profit.laundry_price = Washing_machine_cost(Laundry.Washing_machine);
             profit.dryingg_price = Drying_machine_cost(Laundry.Dryingg_machine);
             profit.avg_Cost = sum_Cost(profit.laundry_price, profit.dryingg_price);
-
+            profit.avg_bath = Pay_back(profit.avg_Cost);
 
             printf("\t\t\tOutput\n\t\t\t\t -------------------------------------------  \n");
             printf("\t\t\t\t Hi \t %s \t welcome to Laundry112  \n", Laundry.str);
             printf("\t\t\t\t -------------------------------------------  \n");
-            printf(" \t\t\t\t-- Ans >> AreaRectangle  = %.2lf Square meter -- \n", Laundry.sumArea);
-            printf(" \t\t\t\t-- Ans >> Washingmachine  = %.lf   \n", Laundry.Washing_machine);
-            printf(" \t\t\t\t-- Ans >> Dryingmachine  = %.lf \n", Laundry.Dryingg_machine);
-            printf(" \t\t\t\t-- Ans >> Space  = %.2lf \n", Laundry.Space);
+            printf(" \t\t\t\t Ans > AreaRectangle  = %.2lf Square meter -- \n", Laundry.sumArea);
+            printf(" \t\t\t\t Ans > Washingmachine  = %.lf   \n", Laundry.Washing_machine);
+            printf(" \t\t\t\t Ans > Dryingmachine  = %.lf \n", Laundry.Dryingg_machine);
+            printf(" \t\t\t\t Ans > Space  = %.2lf \n", Laundry.Space);
             printf("\t\t\t\t -------------------------------------------  \n");
-            printf(" \t\t\t\t-- Ans >> Washing machine cost  = %d B.\n", profit.laundry_price);
-            printf(" \t\t\t\t-- Ans >> Spinning machine cost  = %d B.\n", profit.dryingg_price);
-            printf(" \t\t\t\t-- Ans >> Sum cost  = %d B.\n", profit.avg_Cost);
+            printf(" \t\t\t\t Ans > Washing machine cost  = %d B.\n", profit.laundry_price);
+            printf(" \t\t\t\t Ans > Spinning machine cost  = %d B.\n", profit.dryingg_price);
+            printf(" \t\t\t\t Ans > Sum cost  = %d B.\n", profit.avg_Cost);
+            printf(" \t\t\t\t Ans > Payback  = %d Day.\n", profit.avg_bath);
             printf("\t\t\t\t\t ----- End Program. ----- \n ");
 
 
